@@ -1,0 +1,14 @@
+---
+- name: Includes
+  hosts: webservers
+  become: yes
+  tasks:
+    - name: Activar Includes
+      include: env-preparation-playbook.yml
+    - name: Activar Include2
+      include: nginx-playbook.yml
+    - name: Activar Include3
+      include: deploy-playbook.yml
+    - name: Activar Include4
+      include:  nginx-handler.yml
+...
